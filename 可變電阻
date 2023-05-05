@@ -1,0 +1,14 @@
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  pinMode(12, OUTPUT);
+}
+
+//hcw6678
+void loop() {
+  // read the input on analog pin 0:
+  int sensorRead = analogRead(A0);
+  digitalWrite(12, HIGH);
+  delay(sensorRead);
+  digitalWrite(12, LOW);
+  delay(sensorRead);
+}
