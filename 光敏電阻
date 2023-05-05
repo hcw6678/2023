@@ -1,0 +1,20 @@
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  pinMode(12, OUTPUT);
+}
+
+//hcw6678
+void loop() {
+  // read the input on analog pin 0:
+  int sensorRead = analogRead(A0);
+  Serial.println(sensorRead);
+  if(sensorRead >200){
+    sensorRead = 200;
+  }
+  else if(sensorRead<0){
+    sensorRead = 0;
+  }
+  int ledblink = map(sensorRead, 0,200,0, 255);
+  analogWrite(12,ledblink);
+  delay(1);
+}
